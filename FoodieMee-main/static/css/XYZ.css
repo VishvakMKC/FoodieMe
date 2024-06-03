@@ -1,0 +1,188 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    height: 265px;
+    width: 265px;
+}
+
+.jumbotron p{
+    color: pink;
+}
+
+.jumbotron {
+    background:transparent; 
+    text-align: center;
+    margin:0;
+    padding: 1rem 1rem;
+    animation: fadeIn 2s ease-in-out; 
+    height:100px;
+}
+
+.carousel-heading{
+    font-size: 45pt;
+    font-weight: 600;
+    color: rgb(255, 69, 69);
+    text-shadow: 0 0 10px rgb(70, 69, 70);
+    letter-spacing: 5px;
+}
+
+.carousel,.carousel img{
+    border-radius: 10%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart{
+    height: 20px;
+    width: 20px;
+    text-align: center;
+
+}
+
+.btn{
+    position: relative;
+    left: 25%;
+}
+
+h1 {
+    color: #982176; 
+    font-size: 2.5rem;
+}
+
+p {
+    color: #AACB73;
+    font-size: 1.2rem;
+}
+marquee{
+    color: brown;
+    font-size: 2rem;
+}
+@media (max-width: 768px) {
+    marquee{
+        color: brown;
+        font-size: 1rem;
+    }  
+    p {
+        font-size: 0.7rem; /* Adjust the font size for smaller screens */
+    }
+    h1 {
+        font-size: 1.2rem; /* Adjust the font size for smaller screens */
+    }
+}
+
+.card-title {
+    font-size: 1.5rem; 
+    color:#0E8388;
+}
+.card-text {
+    color: #F72464; 
+    font-size: 1.3rem; 
+    font-weight:600; 
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.06); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+.form-group.quantity {
+margin-top: 10px;
+}
+
+.form-group.quantity label {
+font-size: 1.1rem;
+color: #FFC436;
+}
+
+.form-control[type="number"] {
+width: 70px;
+padding: 6px 12px;
+font-size: 1rem;
+border: 1.5px solid #E4AEC5;
+border-radius: 4px;
+display: inline-block;
+}
+body {
+background: linear-gradient(145deg,rgba(248, 126, 147, 0.726),white);
+background-size: 400% 400%;
+animation: gradientAnimation 20s linear infinite;
+margin: 0;
+padding: 0;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+}
+@keyframes gradientAnimation {
+0% {
+    background-position: 0% 50%;
+}
+
+50% {
+    background-position: 100% 50%;
+}
+
+100% {
+    background-position: 0% 50%;
+}
+}
+.carousel-item > img{
+height: 400px;
+width: 300px;
+}
+#foodCarousel {
+max-height: 750px;
+max-width: 750px;
+align-items: center;
+margin: 0 auto; /* Center horizontally */
+
+}
+.view-cart-link {
+    position: relative;
+    left: -20px;
+
+    
+    }
+
+.carouselslide{
+    min-height: 100vh;
+    background: linear-gradient(145deg,rgb(255, 173, 187) 70%,rgb(245, 240, 240));
+    border-radius: 10%;
+    box-shadow: 0 0 15px rgb(69, 69, 69);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron{
+
+    background: linear-gradient(145deg,rgb(246, 89, 74),rgb(253, 176, 176));
+    box-shadow: 0 0 15px;
+    border-radius: 4%;
+    top: 0;
+    
+}
+.alert {
+    max-width: 500px;
+    border: 2px solid #28a745;
+    padding: 10px;
+}
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+    .alert {
+        max-width: 300px; /* Adjust the width for small screens */
+        padding: 5px; /* Adjust the padding for small screens */
+    }
+}

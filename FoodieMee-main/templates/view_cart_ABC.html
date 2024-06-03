@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your  ABC FOOD Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: url('../static/images/bgimage.jpg');
+
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .cart-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .empty-cart {
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center text-white display-4">Your ABC Cart</h2>
+    <div style="display: flex; justify-content: center; align-items: center; height: 6vh; margin-top: 13px;">
+        {% set messages = get_flashed_messages(category_filter=["danger"]) %}
+        {% if messages %}
+        <div class="alert alert-danger text-center" role="alert" style="max-width: 500px; border: 2px solid #28a745; padding: 5px;">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+    </div>
+    <!-- Check if the cart is empty -->
+    {% if ABC_cart %}
+        <!-- Loop through items in the cart dictionary -->
+        {% for item_name, item_info in ABC_cart.items() %}
+            <div class="cart-item">
+                <h4>{{ item_name }}</h4>
+                <p>Price: ₹{{ item_info.price }}</p>
+                <p>Quantity: {{ item_info.quantity }}</p>
+                <a href="{{ url_for('remove_item', restaurant_name='ABC', item_name_to_remove=item_name) }}" class="btn btn-danger">Remove Item</a>            </div>
+        {% endfor %}
+        <div class="total-cost ">
+            <p class="text-center text-white display-4">Total Cost: ₹{{ total_cost_ABC }}</p>
+        </div>        
+        <a class="btn btn-primary" href="/placeorder/ABC">Place Order</a>
+    {% else %}
+        <p class="empty-cart text-white text-center" style="font-size: 45px;">Your cart is empty.</p>
+    {% endif %}
+    <div style="display: flex; justify-content: center; align-items: center; height: 6vh; margin-top: 13px;">
+        {% set messages = get_flashed_messages(category_filter=["success"]) %}
+        {% if messages %}
+        <div class="alert alert-success text-center" role="alert" style="max-width: 500px; border: 2px solid #28a745; padding: 5px; border-radius: 15px;">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
